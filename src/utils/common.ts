@@ -57,3 +57,7 @@ export const createSHA256 = (line: string, salt: string): string => {
   const shaHasher = crypto.createHmac('sha256', salt);
   return shaHasher.update(line).digest('hex');
 };
+
+export function isPasswordValid(password: string): boolean {
+  return password.length >= 6 && password.length <= 12;
+}
